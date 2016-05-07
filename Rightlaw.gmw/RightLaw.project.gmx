@@ -29,7 +29,8 @@
     <sprite>sprites\sprite2</sprite>
     <sprite>sprites\sprite3</sprite>
     <sprites name="SnowLvlSprites">
-      <sprite>sprites\SnowSwitch</sprite>
+      <sprite>sprites\SnowSwitchUp</sprite>
+      <sprite>sprites\SnowSwitchDown</sprite>
       <sprite>sprites\Stalagtite1</sprite>
       <sprite>sprites\Anim_Stalagtite</sprite>
       <sprite>sprites\Stalagtite3</sprite>
@@ -41,10 +42,10 @@
       <sprite>sprites\Before</sprite>
     </sprites>
     <sprite>sprites\sprite24</sprite>
+    <sprite>sprites\sprite25</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgConservation</background>
-    <background>background\bgConservation1</background>
   </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
@@ -56,6 +57,7 @@
       <object>objects\Stalagtites</object>
       <object>objects\Floor_crack</object>
     </objects>
+    <object>objects\corr</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rConservation</room>
