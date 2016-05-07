@@ -6,20 +6,28 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
+    <sprites name="Hero">
+      <sprites name="Snow">
+        <sprite>sprites\WalkRightSnow</sprite>
+        <sprite>sprites\WalkLeftSnow</sprite>
+      </sprites>
+      <sprites name="Normal">
+        <sprite>sprites\WalkRight</sprite>
+        <sprite>sprites\StopRight</sprite>
+        <sprite>sprites\StopLeft</sprite>
+        <sprite>sprites\WalkLeft</sprite>
+      </sprites>
+      <sprites name="Jumps">
+        <sprite>sprites\JumpEndLeft</sprite>
+        <sprite>sprites\JumpStartLeft</sprite>
+        <sprite>sprites\JumpStartRight</sprite>
+        <sprite>sprites\JumpEndRight</sprite>
+        <sprite>sprites\JumpLeft</sprite>
+        <sprite>sprites\JumpRight</sprite>
+      </sprites>
+    </sprites>
     <sprite>sprites\sprite2</sprite>
     <sprite>sprites\sprite3</sprite>
-    <sprites name="Hero">
-      <sprite>sprites\WalkRight</sprite>
-      <sprite>sprites\StopRight</sprite>
-      <sprite>sprites\StopLeft</sprite>
-      <sprite>sprites\WalkLeft</sprite>
-      <sprite>sprites\JumpStartRight</sprite>
-      <sprite>sprites\JumpStartLeft</sprite>
-      <sprite>sprites\JumpEndRight</sprite>
-      <sprite>sprites\JumpEndLeft</sprite>
-      <sprite>sprites\JumpRight</sprite>
-      <sprite>sprites\JumpLeft</sprite>
-    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bgConservation</background>
@@ -28,6 +36,7 @@
   <paths name="paths"/>
   <objects name="objects">
     <object>objects\oHero</object>
+    <object>objects\oHeroSnow</object>
     <object>objects\oWall</object>
   </objects>
   <rooms name="rooms">
