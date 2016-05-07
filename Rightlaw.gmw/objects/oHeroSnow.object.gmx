@@ -36,6 +36,7 @@ jmpflag = 0;
 old = 0;
 lives = 2;
 sprite_index = StopRight;
+jump = false;
 </string>
           </argument>
         </arguments>
@@ -74,17 +75,31 @@ image_speed = 0.2;
 
 // -1 if left, 1 if right
 move = key_right + key_left;
+
+if (jump == true)
+{
+    if (oldmove &lt; 0)
+        sprite_index = JumpLeft;
+    else if (oldmove &gt; 0)
+        sprite_index = JumpRight;
+    if (place_meeting(x,y+1,oWall))
+    {
+        jump = false;
+    }
+    move = oldmove;
+}
+
 hsp = move * movespeed;
 
 //Sprite Change while walking
-if (jmpflag == 0)
+if (jump == false)
 {
     if (move == 0)
     {
         if (old &lt; 0)
           sprite_index = StopLeft;
         if (old &gt; 0)
-            sprite_index = StopRight;   
+            sprite_index = StopRight;
     }
     else if (move &gt; 0)
         sprite_index = WalkRightSnow;
@@ -102,24 +117,15 @@ if (vsp &lt; 10) vsp += grav;
 if (place_meeting(x, y+1, oWall))
 {
     vsp = key_jump * -jumpspeed;
-//jumping sprite
-//    jumpdir = 0;
-//    jmpflag = 0;
-//    if (move != 0)
-//        jumpdir = move;
-//    else   
-//        jumpdir = old;
-//    if (!place_meeting(x, y + 2, oWall))
-//    {
-//        jmpflag = 1;
-//        move = 0;
-//        if (jumpdir &gt; 0)
-//        sprite_index = JumpRight;
-//        if (jumpdir &lt; 0)
-//        sprite_index = JumpLeft;
-//    }
 }
 
+//jumping sprite
+if (key_jump)
+{
+    jump = true;
+    oldmove = move;
+}
+   
 //horizontal collision
 if (place_meeting(x+hsp, y, oWall))
 {
@@ -138,7 +144,7 @@ if (place_meeting(x+hsp, y, oWall) &amp;&amp; !place_meeting(x+hsp, y-16, oWall)
         y -= 1;
     }
     y -= 1;
-    x += hsp;
+    x += sign(hsp);
 }
 
 //vertical collision
@@ -150,8 +156,6 @@ if (place_meeting(x, y+vsp, oWall))
     }
     vsp = 0;
 }
-
-// Sprite saut
 
 y += vsp;
 
