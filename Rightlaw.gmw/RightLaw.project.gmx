@@ -40,9 +40,12 @@
       <sprite>sprites\Between</sprite>
       <sprite>sprites\After</sprite>
       <sprite>sprites\Before</sprite>
+      <sprite>sprites\Resistance</sprite>
+      <sprite>sprites\cheminee</sprite>
     </sprites>
     <sprite>sprites\Hurt</sprite>
     <sprite>sprites\sprite24</sprite>
+    <sprite>sprites\Restart</sprite>
     <sprite>sprites\sprite25</sprite>
   </sprites>
   <backgrounds name="background">
@@ -58,8 +61,11 @@
       <object>objects\Stalagtites</object>
       <object>objects\Floor_crack</object>
       <object>objects\falliingStalagite</object>
+      <object>objects\Resistances</object>
+      <object>objects\tuyaux</object>
     </objects>
     <object>objects\corr</object>
+    <object>objects\RestartObj</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rConservation</room>
