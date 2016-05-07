@@ -4,11 +4,45 @@
   <solid>-1</solid>
   <visible>0</visible>
   <depth>0</depth>
-  <persistent>-1</persistent>
+  <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="4" ename="oHero">
+    <event eventtype="6" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>502</id>
+        <kind>0</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_draw_background</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>-1</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>7</kind>
+            <background>bg_main_menu_htp</background>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>500</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>500</string>
+          </argument>
+          <argument>
+            <kind>3</kind>
+            <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="0">
       <action>
         <libid>1</libid>
         <id>224</id>
@@ -25,7 +59,7 @@
         <arguments>
           <argument>
             <kind>11</kind>
-            <room>room2</room>
+            <room>menu_main_how_to_play</room>
           </argument>
         </arguments>
       </action>

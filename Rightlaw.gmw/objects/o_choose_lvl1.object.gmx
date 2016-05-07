@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>11</kind>
-            <room>menu_main_new_new</room>
+            <room>rConservation</room>
           </argument>
         </arguments>
       </action>
