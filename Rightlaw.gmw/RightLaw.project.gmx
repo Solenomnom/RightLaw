@@ -46,6 +46,7 @@
       <sprite>sprites\Before</sprite>
       <sprite>sprites\Resistance</sprite>
       <sprite>sprites\cheminee</sprite>
+      <sprite>sprites\BoardSnow</sprite>
     </sprites>
     <sprite>sprites\Hurt</sprite>
     <sprite>sprites\sprite24</sprite>
@@ -75,6 +76,7 @@
       <object>objects\falliingStalagite</object>
       <object>objects\Resistances</object>
       <object>objects\tuyaux</object>
+      <object>objects\PancarteSnow</object>
     </objects>
     <object>objects\corr</object>
     <object>objects\RestartObj</object>
