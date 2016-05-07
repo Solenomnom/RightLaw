@@ -41,6 +41,7 @@
       <sprite>sprites\After</sprite>
       <sprite>sprites\Before</sprite>
     </sprites>
+    <sprite>sprites\Hurt</sprite>
     <sprite>sprites\sprite24</sprite>
     <sprite>sprites\sprite25</sprite>
   </sprites>
@@ -56,6 +57,7 @@
       <object>objects\Switch</object>
       <object>objects\Stalagtites</object>
       <object>objects\Floor_crack</object>
+      <object>objects\falliingStalagite</object>
     </objects>
     <object>objects\corr</object>
   </objects>
