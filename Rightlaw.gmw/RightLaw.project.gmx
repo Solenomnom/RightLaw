@@ -55,6 +55,7 @@
     <background>background\bg_how_to_play</background>
     <background>background\bg_main_menu</background>
     <background>background\bg_main_menu_htp</background>
+    <background>background\bgElectricity</background>
   </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
@@ -87,6 +88,7 @@
     <room>rooms\rConservation</room>
     <room>rooms\menu_main_how_to_play</room>
     <room>rooms\opt_choose_lvl</room>
+    <room>rooms\rElectricity</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
