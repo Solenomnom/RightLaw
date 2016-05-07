@@ -48,7 +48,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>key_space = keyboard_check(vk_space);
+            <string>key_space = keyboard_check_released(vk_space);
 if (key_space)
 {
     if (flag)
