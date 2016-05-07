@@ -26,10 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>//initialize
-grav = 0.6;
+grav = 0.8;
 hsp = 0;
 vsp = 0;
-jumpspeed = 7;
+jumpspeed = 12;
 movespeed = 8;
 move = 0;
 jmpflag = 0;
@@ -77,12 +77,6 @@ hsp = move * movespeed;
 hsp = move * movespeed;
 
 //Sprite Change while walking
-show_debug_message("jmpflag = " + string(jmpflag));
-show_debug_message("move = " + string(move));
-show_debug_message("old =" + string(old));
-show_debug_message("X = " + string(x) + "|| Y = " + string(y));
-show_debug_message("floor X = " + string(oWall.x) + "|| floor Y = " + string(oWall.y));
-
 if (jmpflag == 0)
 {
     if (move == 0)
