@@ -47,6 +47,7 @@
     <sprite>sprites\sprite24</sprite>
     <sprite>sprites\Restart</sprite>
     <sprite>sprites\sprite25</sprite>
+    <sprite>sprites\sprite31</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgConservation</background>
@@ -66,6 +67,7 @@
     </objects>
     <object>objects\corr</object>
     <object>objects\RestartObj</object>
+    <object>objects\oTmpWall</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rConservation</room>

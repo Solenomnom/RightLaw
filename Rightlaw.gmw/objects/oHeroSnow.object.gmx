@@ -127,9 +127,9 @@ if (key_jump)
 }
    
 //horizontal collision
-if (place_meeting(x+hsp, y, oWall))
+if (place_meeting(x+hsp, y, oWall) || place_meeting(x+hsp, y, oTmpWall))
 {
-    while (!place_meeting(x+sign(hsp), y, oWall))
+    while (!place_meeting(x+sign(hsp), y, oWall) &amp;&amp; !place_meeting(x+sign(hsp), y, oTmpWall))
     {
         x += sign(hsp);
     }
@@ -137,9 +137,9 @@ if (place_meeting(x+hsp, y, oWall))
 }
 else
     x += hsp;
-if (place_meeting(x+hsp, y, oWall) &amp;&amp; !place_meeting(x+hsp, y-16, oWall))
+if ((place_meeting(x+hsp, y, oWall) || place_meeting(x+hsp, y, oTmpWall)) &amp;&amp; (!place_meeting(x+hsp, y-16, oWall) &amp;&amp; !place_meeting(x+hsp,y-16,oTmpWall)))
 {
-    while (place_meeting(x+hsp, y-1, oWall))
+    while (place_meeting(x+hsp, y-1, oWall) || place_meeting(x+hsp, y-1, oTmpWall))
     {
         y -= 1;
     }
@@ -148,9 +148,9 @@ if (place_meeting(x+hsp, y, oWall) &amp;&amp; !place_meeting(x+hsp, y-16, oWall)
 }
 
 //vertical collision
-if (place_meeting(x, y+vsp, oWall))
+if (place_meeting(x, y+vsp, oWall) || place_meeting(x, y+vsp, oTmpWall))
 {
-    while (!place_meeting(x,y+sign(vsp), oWall))
+    while (!place_meeting(x,y+sign(vsp), oWall) &amp;&amp; !place_meeting(x,y+sign(vsp), oTmpWall))
     {
         y += sign(vsp);
     }
