@@ -54,9 +54,15 @@
     <sprites name="Doors">
       <sprite>sprites\DoorSnow</sprite>
     </sprites>
+    <sprite>sprites\sprite31</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgConservation</background>
+    <background>background\bg_choose_lvl</background>
+    <background>background\bg_how_to_play</background>
+    <background>background\bg_main_menu</background>
+    <background>background\bg_main_menu_htp</background>
+    <background>background\bgElectricity</background>
   </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
@@ -77,9 +83,23 @@
       <object>objects\oHero</object>
       <object>objects\Life</object>
     </objects>
+    <object>objects\oTmpWall</object>
+    <object>objects\menu_return</object>
+    <object>objects\o_choose_lvl1</object>
+    <object>objects\o_choose_lvl2</object>
+    <object>objects\o_choose_lvl3</object>
+    <object>objects\o_echap</object>
+    <object>objects\o_menu_how_to_play</object>
+    <object>objects\o_menu_main_play</object>
+    <object>objects\o_menu_main_quit</object>
+    <object>objects\o_menu_main_select_lvl</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\menu_main_new_new</room>
     <room>rooms\rConservation</room>
+    <room>rooms\menu_main_how_to_play</room>
+    <room>rooms\opt_choose_lvl</room>
+    <room>rooms\rElectricity</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
