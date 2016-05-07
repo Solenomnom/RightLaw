@@ -40,6 +40,7 @@
       <sprite>sprites\After</sprite>
       <sprite>sprites\Before</sprite>
     </sprites>
+    <sprite>sprites\sprite24</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgConservation</background>
