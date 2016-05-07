@@ -28,6 +28,18 @@
     </sprites>
     <sprite>sprites\sprite2</sprite>
     <sprite>sprites\sprite3</sprite>
+    <sprites name="SnowLvlSprites">
+      <sprite>sprites\SnowSwitch</sprite>
+      <sprite>sprites\Stalagtite1</sprite>
+      <sprite>sprites\Anim_Stalagtite</sprite>
+      <sprite>sprites\Stalagtite3</sprite>
+      <sprite>sprites\floor_crack1</sprite>
+      <sprite>sprites\Anim_crack_2</sprite>
+      <sprite>sprites\Anim_crack_1</sprite>
+      <sprite>sprites\Between</sprite>
+      <sprite>sprites\After</sprite>
+      <sprite>sprites\Before</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bgConservation</background>
@@ -38,6 +50,11 @@
     <object>objects\oHero</object>
     <object>objects\oHeroSnow</object>
     <object>objects\oWall</object>
+    <objects name="Niveau glace">
+      <object>objects\Switch</object>
+      <object>objects\Stalagtites</object>
+      <object>objects\Floor_crack</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\room1</room>
