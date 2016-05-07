@@ -25,6 +25,10 @@
         <sprite>sprites\JumpLeft</sprite>
         <sprite>sprites\JumpRight</sprite>
       </sprites>
+      <sprites name="Life">
+        <sprite>sprites\Coeur1</sprite>
+        <sprite>sprites\Coeur2</sprite>
+      </sprites>
     </sprites>
     <sprite>sprites\sprite2</sprite>
     <sprite>sprites\sprite3</sprite>
@@ -47,15 +51,17 @@
     <sprite>sprites\sprite24</sprite>
     <sprite>sprites\Restart</sprite>
     <sprite>sprites\sprite25</sprite>
+    <sprites name="Doors">
+      <sprite>sprites\DoorSnow</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bgConservation</background>
   </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
-    <object>objects\oHero</object>
-    <object>objects\oHeroSnow</object>
     <object>objects\oWall</object>
+    <object>objects\oDoorSnow</object>
     <objects name="Niveau glace">
       <object>objects\Switch</object>
       <object>objects\Stalagtites</object>
@@ -66,6 +72,11 @@
     </objects>
     <object>objects\corr</object>
     <object>objects\RestartObj</object>
+    <objects name="Hero">
+      <object>objects\oHeroSnow</object>
+      <object>objects\oHero</object>
+      <object>objects\Life</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rConservation</room>
