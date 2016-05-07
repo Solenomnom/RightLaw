@@ -13,6 +13,12 @@
       <sprite>sprites\StopRight</sprite>
       <sprite>sprites\StopLeft</sprite>
       <sprite>sprites\WalkLeft</sprite>
+      <sprite>sprites\JumpStartRight</sprite>
+      <sprite>sprites\JumpStartLeft</sprite>
+      <sprite>sprites\JumpEndRight</sprite>
+      <sprite>sprites\JumpEndLeft</sprite>
+      <sprite>sprites\JumpRight</sprite>
+      <sprite>sprites\JumpLeft</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">

@@ -31,7 +31,10 @@ hsp = 0;
 vsp = 0;
 jumpspeed = 7;
 movespeed = 8;
-
+move = 0;
+jmpflag = 0;
+old = 0;
+sprite_index = StopRight;
 </string>
           </argument>
         </arguments>
@@ -60,28 +63,55 @@ key_left = -keyboard_check(vk_left);
 key_jump = keyboard_check_pressed(vk_up);
 
 //set imagespeed
-image_speed = 0.2;
+image_speed = 0.5;
 
 //actions
-move = 0;
-old = move;
+if (move != 0)
+    old = move;
 move = key_right + key_left;
 hsp = move * movespeed;
 
+
 //Sprite Change while walking
-if (move == 0)
+show_debug_message("jmpflag = " + string(jmpflag));
+show_debug_message("move = " + string(move));
+show_debug_message("old =" + string(old));
+show_debug_message("X = " + string(x) + "|| Y = " + string(y));
+show_debug_message("floor X = " + string(oWall.x) + "|| floor Y = " + string(oWall.y));
+
+if (jmpflag == 0)
 {
-    if (old &lt; 0)
-        sprite_index = StopLeft;
+    if (move == 0)
+    {
+        if (old &lt; 0)
+          sprite_index = StopLeft;
+        if (old &gt; 0)
+            sprite_index = StopRight;   
+    }
+    else if (move &gt; 0)
+        sprite_index = WalkRight;
     else
-        sprite_index = StopRight;   
+        sprite_index = WalkLeft;
 }
-else if (move &gt; 0)
-    sprite_index = WalkRight;
-else
-    sprite_index = WalkLeft;
 //
 
+//jumping sprite
+jumpdir = 0;
+jmpflag = 0;
+if (move != 0)
+    jumpdir = move;
+else
+    jumpdir = old;
+if (!place_meeting(x, y+1, oWall))
+{
+    jmpflag = 1;
+    move = 0;
+    if (jumpdir &gt; 0)
+    sprite_index = JumpRight;
+    if (jumpdir &lt; 0)
+    sprite_index = JumpLeft;
+}
+//
 if (vsp &lt; 10) vsp += grav;
 if (place_meeting(x, y+1, oWall))
 {
@@ -106,6 +136,9 @@ if (place_meeting(x, y+vsp, oWall))
     }
     vsp = 0;
 }
+
+// Sprite saut
+
 y += vsp;
 
 </string>
