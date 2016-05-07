@@ -23,6 +23,7 @@
   </sprites>
   <backgrounds name="background">
     <background>background\bgConservation</background>
+    <background>background\bgConservation1</background>
   </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
