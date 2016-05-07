@@ -59,48 +59,42 @@ key_right = keyboard_check(vk_right);
 key_left = -keyboard_check(vk_left);
 key_jump = keyboard_check_pressed(vk_up);
 
-//set imagespeed
 image_speed = 0.2;
 
-//actions
-move = 0;
-old = move;
+// -1 if left, 1 if right
 move = key_right + key_left;
 hsp = move * movespeed;
+hsp = move * movespeed;
 
-//Sprite Change while walking
-if (move == 0)
-{
-    if (old &lt; 0)
-        sprite_index = StopLeft;
-    else
-        sprite_index = StopRight;   
-}
-else if (move &gt; 0)
-    sprite_index = WalkRight;
-else
-    sprite_index = WalkLeft;
-//
-
+//falling speed
 if (vsp &lt; 10) vsp += grav;
+
+//jump
 if (place_meeting(x, y+1, oWall))
 {
     vsp = key_jump * -jumpspeed;
 }
+
 //horizontal collision
 if (place_meeting(x+hsp, y, oWall))
 {
     while (!place_meeting(x+sign(hsp), y, oWall))
     {
         x += sign(hsp);
+        if (place_meeting(x+sign(hsp), y, oWall) &amp;&amp; !place_meeting(x+sign(hsp), y+(10*sign(vsp)), oWall))
+        {
+            
+            y += sign(vsp);
+        }
     }
     hsp = 0;
 }
 x += hsp;
+
 //vertical collision
 if (place_meeting(x, y+vsp, oWall))
 {
-    while (!place_meeting(x, y+sign(vsp), oWall))
+    while (!place_meeting(x,y+sign(vsp), oWall))
     {
         y += sign(vsp);
     }
