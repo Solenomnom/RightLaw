@@ -4,7 +4,13 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\Salle_des_machines</sound>
+    <sound>sound\Switch_Sound0</sound>
+    <sound>sound\Salle_de_conversion</sound>
+    <sound>sound\Menu</sound>
+    <sound>sound\Salle_gravity</sound>
+  </sounds>
   <sprites name="sprites">
     <sprites name="Hero">
       <sprites name="Snow">
@@ -123,6 +129,17 @@
       <object>objects\o_levier_off3</object>
       <object>objects\arc_electrique</object>
     </objects>
+    <object>objects\object35</object>
+    <objects name="Audio">
+      <object>objects\Sound_Electric_room</object>
+      <object>objects\Sound_Winter_room</object>
+      <object>objects\Sound_Gravity_room</object>
+      <object>objects\oMenu</object>
+      <object>objects\Switch_sound</object>
+      <object>objects\object39</object>
+      <object>objects\object42</object>
+    </objects>
+    <object>objects\object38</object>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\timeline0</timeline>

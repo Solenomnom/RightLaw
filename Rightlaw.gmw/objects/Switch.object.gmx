@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>flag = 0;
+</string>
           </argument>
         </arguments>
       </action>
@@ -48,7 +49,7 @@
           <argument>
             <kind>1</kind>
             <string>key_space = keyboard_check_released(vk_space);
-if (key_space)
+if (key_space &amp;&amp; flag == 0)
 {
         sprite_index = SnowSwitchDown;
         Resistances.visible = true;
@@ -58,6 +59,8 @@ if (key_space)
     oDoorSnow.visible = false;
     instance_destroy();
    }
+   instance_create(0,0, Switch_sound);
+   flag = 1;
 }
 </string>
           </argument>
