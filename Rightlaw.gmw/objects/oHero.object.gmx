@@ -36,6 +36,7 @@ jmpflag = 0;
 old = 0;
 lives = 2;
 sprite_index = StopRight;
+jump = false;
 </string>
           </argument>
         </arguments>
@@ -74,42 +75,39 @@ image_speed = 0.2;
 
 // -1 if left, 1 if right
 move = key_right + key_left;
-hsp = move * movespeed;
+
+if (jump == true)
+{
+    if (oldmove &lt; 0)
+        sprite_index = JumpLeft;
+    else if (oldmove &gt; 0)
+        sprite_index = JumpRight;
+    if (place_meeting(x,y+1,oWall))
+    {
+        jump = false;
+    }
+    move = oldmove;
+}
+
 hsp = move * movespeed;
 
 //Sprite Change while walking
-if (jmpflag == 0)
+if (jump == false)
 {
     if (move == 0)
     {
         if (old &lt; 0)
           sprite_index = StopLeft;
         if (old &gt; 0)
-            sprite_index = StopRight;   
+            sprite_index = StopRight;
     }
     else if (move &gt; 0)
-        sprite_index = WalkRight;
+        sprite_index = WalkRightSnow;
     else
-        sprite_index = WalkLeft;
+        sprite_index = WalkLeftSnow;
 }
 //
 
-//jumping sprite
-jumpdir = 0;
-jmpflag = 0;
-if (move != 0)
-    jumpdir = move;
-else
-    jumpdir = old;
-if (!place_meeting(x, y + 2, oWall))
-{
-    jmpflag = 1;
-    move = 0;
-    if (jumpdir &gt; 0)
-    sprite_index = JumpRight;
-    if (jumpdir &lt; 0)
-    sprite_index = JumpLeft;
-}
 //
 
 //falling speed
@@ -121,33 +119,52 @@ if (place_meeting(x, y+1, oWall))
     vsp = key_jump * -jumpspeed;
 }
 
-//horizontal collision
-if (place_meeting(x+hsp, y, oWall))
+//jumping sprite
+if (key_jump)
 {
-    while (!place_meeting(x+sign(hsp), y, oWall))
-    {
-        x += sign(hsp);
-        if (place_meeting(x+sign(hsp), y, oWall) &amp;&amp; !place_meeting(x+sign(hsp), y+(10*sign(vsp)), oWall))
-        {
-            
-            y += sign(vsp);
-        }
-    }
-    hsp = 0;
+    jump = true;
+    oldmove = move;
 }
-x += hsp;
+   
+//horizontal collision
+if (place_meeting(x+hsp, y, oDoorSnow)
+    || place_meeting(x+hsp, y, oWall)
+    || place_meeting(x+hsp, y, oTmpWall))
+{
+    if (place_meeting(x+hsp, y, oDoorSnow))
+        while (!place_meeting(x+sign(hsp), y, oDoorSnow))
+        {
+         x += sign(hsp);
+        }
+    if (place_meeting(x+hsp, y, oWall)
+        || place_meeting(x+hsp, y, oTmpWall))
+        while (!place_meeting(x+sign(hsp), y, oWall) &amp;&amp; !place_meeting(x+sign(hsp), y, oTmpWall))
+        {
+         x += sign(hsp);
+        }
+    x += 0;
+}
+else
+    x += hsp;
+if ((place_meeting(x+hsp, y, oWall) || place_meeting(x+hsp, y, oTmpWall)) &amp;&amp; (!place_meeting(x+hsp, y-16, oWall) &amp;&amp; !place_meeting(x+hsp,y-16,oTmpWall)))
+{
+    while (place_meeting(x+hsp, y-1, oWall) || place_meeting(x+hsp, y-1, oTmpWall))
+    {
+        y -= 1;
+    }
+    y -= 1;
+    x += sign(hsp);
+}
 
 //vertical collision
-if (place_meeting(x, y+vsp, oWall))
+if (place_meeting(x, y+vsp, oWall) || place_meeting(x, y+vsp, oTmpWall))
 {
-    while (!place_meeting(x,y+sign(vsp), oWall))
+    while (!place_meeting(x,y+sign(vsp), oWall) &amp;&amp; !place_meeting(x,y+sign(vsp), oTmpWall))
     {
         y += sign(vsp);
     }
     vsp = 0;
 }
-
-// Sprite saut
 
 y += vsp;
 
@@ -157,6 +174,22 @@ y += vsp;
       </action>
     </event>
     <event eventtype="7" enumb="6">
+      <action>
+        <libid>1</libid>
+        <id>331</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_restart_game</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+    </event>
+    <event eventtype="7" enumb="0">
       <action>
         <libid>1</libid>
         <id>331</id>

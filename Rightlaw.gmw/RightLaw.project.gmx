@@ -56,6 +56,19 @@
       <sprite>sprites\DoorSnow</sprite>
     </sprites>
     <sprite>sprites\sprite31</sprite>
+    <sprites name="rElectric">
+      <sprite>sprites\s_arc_electric_1</sprite>
+      <sprite>sprites\s_arc_electric_2</sprite>
+      <sprite>sprites\s_arc_electric_0</sprite>
+      <sprite>sprites\s_panneu_elect</sprite>
+      <sprite>sprites\s_levier_off</sprite>
+      <sprite>sprites\s_levier_off0</sprite>
+      <sprite>sprites\s_plateform_safe</sprite>
+      <sprite>sprites\s_plateform_1</sprite>
+      <sprite>sprites\s_plateform_2</sprite>
+      <sprite>sprites\s_plateform_3</sprite>
+      <sprite>sprites\s_plateform_4</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bgConservation</background>
@@ -83,7 +96,8 @@
     <objects name="Hero">
       <object>objects\oHeroSnow</object>
       <object>objects\oHero</object>
-      <object>objects\Life</object>
+      <object>objects\LifeSnow</object>
+      <object>objects\Life_Normal</object>
     </objects>
     <object>objects\oTmpWall</object>
     <object>objects\menu_return</object>
@@ -95,7 +109,24 @@
     <object>objects\o_menu_main_play</object>
     <object>objects\o_menu_main_quit</object>
     <object>objects\o_menu_main_select_lvl</object>
+    <objects name="ElectricLVL">
+      <objects name="plateformes">
+        <object>objects\o_plateform_safe</object>
+        <object>objects\o_plateforme_notsafe1</object>
+        <object>objects\o_plateforme_safe2</object>
+        <object>objects\o_plateforme_safe3</object>
+      </objects>
+      <object>objects\o_levier_on</object>
+      <object>objects\o_levier_off0</object>
+      <object>objects\o_levier_off1</object>
+      <object>objects\o_levier_off2</object>
+      <object>objects\o_levier_off3</object>
+      <object>objects\arc_electrique</object>
+    </objects>
   </objects>
+  <timelines name="timelines">
+    <timeline>timelines\timeline0</timeline>
+  </timelines>
   <rooms name="rooms">
     <room>rooms\menu_main_new_new</room>
     <room>rooms\rConservation</room>
